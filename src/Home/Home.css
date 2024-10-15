@@ -1,0 +1,71 @@
+/* Resetting default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+  
+/* Global styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #cac1c1; /* Example background color */
+}
+
+/* Main content styles */
+.grid-container {
+  padding: 20px 10px; /* Reduced left and right padding */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 20px;
+  justify-content: start; /* Align items from the left */
+}
+
+.grid-item {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.grid-item a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.grid-item img {
+  width: 100%;
+  height: auto;
+  transition: transform 0.3s ease;
+}
+
+.grid-item:hover img {
+  transform: scale(1.1);
+}
+
+.caption {
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Media Query for Tablets */
+@media (max-width: 991px) {
+  .grid-container {
+      grid-template-columns: repeat(2, 1fr); /* 2 cards per row on tablets */
+  }
+}
+
+/* Media Query for Phones */
+@media (max-width: 767px) {
+  .grid-container {
+      grid-template-columns: 1fr; 
+  }
+}

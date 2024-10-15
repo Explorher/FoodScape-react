@@ -1,0 +1,101 @@
+.recipe-container {
+  margin: 10px;
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping of items to the next line */
+  gap: 20px; /* Space between cards */
+  padding: 20px; /* Padding around the container */
+  width: 100vw; /* Ensure it covers the screen horizontally */
+  box-sizing: border-box; /* Include padding and border in element's total width and height */
+}
+
+.recipe-card {
+  flex: 1 1 calc(33.333% - 20px); /* Three cards per line, with margin included */
+  max-width: calc(33.333% - 20px); /* Adjust for space between cards */
+  display: flex;
+  flex-direction: column; /* Stack content vertically */
+  align-items: center; /* Center items horizontally */
+  background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  height: auto;
+  padding: 20px;
+  transition: transform 0.4s ease-in-out;
+}
+
+.recipe-card:hover {
+  transform: translateY(-5px);
+}
+
+.image-container {
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.image-container img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid white;
+}
+
+.content {
+  text-align: center; /* Center text in the content */
+  color: #fff;
+}
+
+.recipe-title {
+  margin: 0;
+  font-size: 24px; /* Adjusted size for better readability */
+  font-weight: 700; /* Bold title */
+  position: relative; /* Position relative to place additional image */
+}
+
+.additional-image {
+  width: 43px;
+  height: 36px;
+  border-radius: 0px;
+  position: absolute;
+  right: 55px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.recipe-about {
+  margin: 10px 0;
+  font-size: 16px; /* Adjusted size for better readability */
+  font-weight: 500; /* Semi-bold about text */
+}
+
+.recipe-recipe {
+  margin-top: 10px;
+  font-size: 14px; /* Adjusted size for better readability */
+  opacity: 0.9;
+}
+
+.button-container {
+  margin-top: 20px; /* Space between content and button */
+  text-align: center; /* Center button container */
+}
+
+.get-recipe-button {
+  background-color: #ff6f61;
+  color: white;
+  padding: 12px 30px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.get-recipe-button:hover {
+  background-color: #ff3b2f;
+  transform: translateY(-3px);
+}
+
+.get-recipe-button:active {
+  transform: translateY(0);
+}

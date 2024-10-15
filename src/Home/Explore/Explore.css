@@ -1,0 +1,97 @@
+.explore-card h4 {
+    margin-top: 15px; /* Add spacing above the headings */
+    font-weight: bold; /* Make headings bold */
+  }
+  
+  .explore-card p {
+    margin: 5px 0; /* Add some margin for paragraphs */
+    line-height: 1.5; /* Improve readability */
+  }
+  
+
+.rrecipe-container {
+    font-size: 100%; 
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f4f9; /* Light background for the overall page */
+    box-sizing: border-box;
+    color: #333;
+    min-height: 100vh; /* Ensure full viewport height */
+    display: flex;
+    flex-direction: column; /* Ensure flex direction is column */
+    align-items: center;
+    justify-content: center;
+}
+
+.recipe-content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px; /* Add padding to the content area */
+    background-color: #fff; /* White background for the content */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 10px; /* Rounded corners */
+    max-width: 800px; /* Limit the width of the content */
+    width: 100%; /* Full width for smaller screens */
+}
+
+h2 {
+    font-size: 2rem; /* Font size for the main heading */
+    color: #444; /* Dark color for the heading */
+    margin-bottom: 20px; /* Space below the heading */
+    text-align: center; /* Center the heading */
+}
+
+.explore-items {
+    display: flex;
+    flex-direction: column; /* Stack explore cards vertically */
+    gap: 15px; /* Space between cards */
+}
+
+.explore-card {
+    background-color: #f9f9fb; /* Light background for each card */
+    border-radius: 10px; /* Rounded corners for the card */
+    padding: 15px; /* Padding inside the card */
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+.explore-card h3 {
+    font-size: 1.5rem; /* Font size for chef name */
+    color: #333; /* Dark color for chef name */
+    margin-bottom: 10px; /* Space below the chef name */
+}
+
+.explore-card h4 {
+    margin-top: 15px; /* Space above the Ingredients and Procedure headings */
+    color: #444; /* Color for headings */
+}
+
+.explore-card ul {
+    list-style: none; /* Remove default list styles */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.explore-card li {
+    margin-bottom: 8px; /* Space between list items */
+    padding-left: 10px; /* Space for the bullet */
+    position: relative; /* Positioning for bullet */
+    color: #555; /* Color for ingredients */
+    font-size: 1rem; /* Font size for ingredients */
+}
+
+.explore-card li::before {
+    content: '•'; /* Custom bullet */
+    position: absolute;
+    left: 0; /* Positioning for bullet */
+    color: #ff6347; /* Color for bullet */
+    font-size: 0.8rem; /* Size for bullet */
+    line-height: 1; /* Line height for bullet */
+}
+
+.explore-card p {
+    margin-top: 10px; /* Space above the procedure text */
+    color: #666; /* Color for the procedure text */
+    font-size: 1rem; /* Font size for procedure text */
+    line-height: 1.6; /* Line height for readability */
+}

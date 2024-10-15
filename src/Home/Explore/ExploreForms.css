@@ -1,0 +1,93 @@
+
+
+.cover {
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); /* Dark gradient background */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem; /* Ensure some padding around the form for aesthetics */
+}
+
+.form-container {
+    background: rgba(255, 255, 255, 0.1); /* More transparent for a darker look */
+    backdrop-filter: blur(15px); /* Enhanced blur for a clearer glass effect */
+    border-radius: 15px; /* Slightly more rounded corners for a modern look */
+    padding: 3rem;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5); /* Deeper shadow for better elevation */
+    width: 100vw; /* Cover full width of the viewport */
+    height: auto; /* Allows height to adjust based on content */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-title {
+    font-size: 2.5rem; /* Slightly larger title for emphasis */
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #f5f5f5; /* Light color for title */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Soft shadow for depth */
+}
+
+.recipe-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%; /* Ensure it takes full width of the container */
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #f5f5f5; /* Light label for better contrast */
+}
+
+input[type="text"],
+textarea {
+    border: 2px solid rgba(255, 255, 255, 0.5); /* Light border for contrast */
+    border-radius: 10px; /* Slightly rounded for modern look */
+    padding: 0.75rem;
+    font-size: 1rem;
+    background: rgba(255, 255, 255, 0.2); /* Darker input background */
+    color: #f5f5f5; /* Light text color */
+    transition: border 0.3s ease;
+    width: 100%; /* Full width for the input */
+}
+
+input[type="text"]:focus,
+textarea:focus {
+    border-color: #6c5ce7;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.3); /* More opaque on focus */
+}
+
+textarea {
+    min-height: 150px; /* Increased height for text area */
+    resize: vertical;
+}
+
+.submit-btn {
+    padding: 1rem;
+    background-color: #6c5ce7;
+    border: none;
+    border-radius: 10px; /* Rounded corners for button */
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+    width: 100%; /* Full width for button */
+    margin-top: 2rem;
+}
+
+.submit-btn:hover {
+    background-color: #5e42d1;
+}
