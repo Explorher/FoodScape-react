@@ -35,7 +35,7 @@ import ChinDrinks from './Home/Chinese/ChinDrinks';
     return (
       <>
       
-      <Navbar  pic={pic} />
+      <Navbar  setPic={setPic}  pic={pic} />
      
      <Routes>
           <Route path="/" element={<Home />} />

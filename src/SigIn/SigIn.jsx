@@ -1,4 +1,4 @@
-import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from 'firebase/auth';
+import { GoogleAuthProvider, signInWithPopup, onAuthStateChanged, setPersistence, browserLocalPersistence } from 'firebase/auth';
 import React, { useState, useEffect } from 'react';
 import './SignIn.css';
 import { auth } from '../firebase';
@@ -26,7 +26,10 @@ export default function SigIn({ setPic }) {
     function googleLogin() {
         const provider = new GoogleAuthProvider();
 
-        signInWithPopup(auth, provider).then(async (result) => {
+        // Set persistence to local (across refreshes)
+        setPersistence(auth, browserLocalPersistence).then(() => {
+            return signInWithPopup(auth, provider);
+        }).then((result) => {
             console.log(result);
             setPic(result.user.photoURL);  // Set the profile picture
             setIsLoggedIn(true);
@@ -54,7 +57,6 @@ export default function SigIn({ setPic }) {
                                 <input type="checkbox" />
                                 Remember me
                             </label>
-                            
                         </div>
                         <button className="ebutton" type="submit">Log In</button>
                     </form>
