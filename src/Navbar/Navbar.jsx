@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import './Navbar.css';
 import { Link, useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
-import { auth } from '../firebase';  // Make sure the import path is correct
+import { auth } from '../firebase';
 
-function Navbar({ pic, setPic }) {
+function Navbar({ pic, setPic, user }) {  // Assuming 'user' is passed as a prop
     const [drawerOpen, setDrawerOpen] = useState(false);
-    const navigate = useNavigate();  // For navigation after sign out
+    const navigate = useNavigate();
 
     const toggleDrawer = () => {
         setDrawerOpen(!drawerOpen);
@@ -16,16 +16,15 @@ function Navbar({ pic, setPic }) {
         setDrawerOpen(false);
     };
 
-    const handleSignOut = () => {
+    const handleSignOut = (e) => {
+        e.preventDefault();  // Prevent default link behavior
         signOut(auth)
             .then(() => {
-                // Sign-out successful
                 setPic(null);  // Clear the user profile picture after sign-out
                 console.log("User signed out");
                 navigate('/Login');  // Redirect to the Login page after signout
             })
             .catch((error) => {
-                // Handle errors here
                 console.error("Error signing out: ", error);
             });
     };
@@ -45,10 +44,13 @@ function Navbar({ pic, setPic }) {
                     <nav className="nav-desktop">
                         <Link to="/">Home</Link>
                         <Link to="/product">Products</Link>
-                        <Link to="/" onClick={handleSignOut}>Signout</Link>  {/* Updated Signout link */}
-                        <Link to="/Login">SignIn</Link>
+                        {user ? (  // Render Signout link only if user is logged in
+                            <Link to="/" onClick={handleSignOut}>Signout</Link>
+                        ) : (
+                            <Link to="/Login">SignIn</Link>
+                        )}
                     </nav>
-                </div> 
+                </div>
                 
                 <div className="search-container">
                     <input type="text" placeholder="Search" />
