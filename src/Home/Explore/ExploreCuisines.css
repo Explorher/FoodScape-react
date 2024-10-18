@@ -48,19 +48,23 @@ p {
 }
 
 .add-cuisine {
+    background: rgba(255, 255, 255, 0.1); /* Same glass effect */
+    backdrop-filter: blur(10px);
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37); /* Same soft shadow */
+    transition: transform 0.3s ease;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #6c5ce7;
-    color: white;
-    cursor: pointer;
-    height: 150px; /* Consistent height for "Add Cuisine" card */
+    height: 100%; /* Matches the height of recipe cards */
+    min-width: 250px; /* Same minimum width */
 }
 
-.add-cuisine h3 {
-    margin: 0;
-    font-size: 1.5rem;
+.add-cuisine:hover {
+    transform: translateY(-10px); /* Same hover effect */
 }
+
 
 .get-recipe-button {
     background-color: #e63946; /* Red button */

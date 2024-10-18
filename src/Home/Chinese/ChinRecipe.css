@@ -66,6 +66,7 @@
   margin: 10px 0;
   font-size: 16px; /* Adjusted size for better readability */
   font-weight: 500; /* Semi-bold about text */
+  color: rgb(26, 25, 25);
 }
 
 .recipe-recipe {

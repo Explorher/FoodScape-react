@@ -9,7 +9,7 @@ const defaultPic = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGB
 function Navbar({ pic, setPic }) {
     const [user, setUser] = useState(null);
     const navigate = useNavigate();
-
+    
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
             setUser(currentUser);
@@ -48,13 +48,25 @@ function Navbar({ pic, setPic }) {
                         <Link className='brand' to="/">FoodScape</Link>
                     </div>
                     <nav className="nav-desktop">
-                        <Link to="/">Home</Link>
-                        {/* Always show Sign In and Sign Out buttons */}
-                        <Link to="/Login" className="signin-button">Sign In</Link>
-                        <button type="button" onClick={handleSignOut} className="signout-button">
-                            Sign Out
-                        </button>
-                    </nav>
+    <Link to="/">Home</Link>
+    {user ? (
+        <Link to="/Home">Recipes</Link>
+    ) : (
+        <Link 
+            to="/login" 
+            style={{ textDecoration: 'none', color: 'gray' }} 
+            onClick={() => alert('Please log in to access Recipes.')}
+        >
+            Recipes
+        </Link>
+    )}
+    <Link to="/News">News</Link>
+    {/* Always show Sign In and Sign Out buttons */}
+    <Link to="/Login" className="signin-button">Sign In</Link>
+    <button type="button" onClick={handleSignOut} className="signout-button">
+        Sign Out
+    </button>
+</nav>
                 </div>
                 <div className="search-container">
                     <input type="text" placeholder="Search" />

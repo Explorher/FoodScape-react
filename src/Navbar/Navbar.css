@@ -213,3 +213,8 @@ header .search-container .search-button:hover {
     height: 100%;
     object-fit: cover;
 }
+.disabled {
+    pointer-events: none; /* Disable clicking */
+    color: gray; /* Change color to indicate disabled state */
+    text-decoration: none; /* Remove underline */
+  }
